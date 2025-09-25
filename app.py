@@ -43,6 +43,7 @@ def index():
             result = f"{top}\n\n{text}\n\n{bottom}"
         elif option == '4':
             # Option 4: Mix all - Decoration 1 + wrap in (()) + Option 3 emojis
+            import random
             wrapped = f"(({text}))"
             selected_emojis = random.sample(EMOJIS_3, min(3, len(EMOJIS_3)))
             mix_decor = f"{DECORATION_1}\n\n{wrapped}\n\n{' '.join(selected_emojis)}"
@@ -55,4 +56,5 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Run on localhost with port 8000
+    app.run(host='127.0.0.1', port=8000, debug=True)
